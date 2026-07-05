@@ -1,0 +1,19 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  background: linear-gradient(90deg, #0f172a, #3b82f6);
+  color: white;
+
+  text-align: center;
+  padding: 15px 10px;
+
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.footer p {
+  margin: 0;
+}
