@@ -94,7 +94,7 @@ function Produtos() {
 
 
                                     <img
-                                        src={`http://localhost:4000/uploads/${produto.image}`}
+                                        src={`https://miniecommerce-1wb7.onrender.com/uploads/${produto.image}`}
                                         alt={produto.name}
                                         style={{
                                             width: "100%",
