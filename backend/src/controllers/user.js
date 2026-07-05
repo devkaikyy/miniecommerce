@@ -1,11 +1,11 @@
 import User from "../models/user.js";
-import bcript from 'bcrypt'
+import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
 export const buscarUsuario = async (req, res) => {
     try {
         const buscar = await User.find()
-         return res.status(201).json(buscar)
+         return res.status(200).json(buscar)
     } catch(erro) {
          return res.status(400).json({
             erro: erro.message
@@ -37,7 +37,7 @@ export const cadastrar = async (req, res) => {
           })
         }
 
-        const hasdPassword = await bcript.hash(password, 10)
+        const hasdPassword = await bcrypt.hash(password, 10)
 
         await User.create({
             name,
@@ -74,7 +74,7 @@ export const login = async (req, res) => {
             })
         }
 
-        const senhaExist = await bcript.compare(password, user.password)
+        const senhaExist = await bcrypt.compare(password, user.password)
 
         if(!senhaExist) {
           return res.status(401).json({
